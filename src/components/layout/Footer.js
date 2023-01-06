@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faTwitter, faInstagram, faYoutube, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import logo from '../../assets/logo-long.png';
@@ -7,52 +8,53 @@ const Footer = () => {
   };
   return (
     <footer>
-      <a href='/' className='logo'>
+      <Link to='/' className='logo'>
         <img src={logo} alt='Little Lemon' style={logoStyle} />
-      </a>
+      </Link>
       <div>
         <h3>Doormat Navigation</h3>
+
         <ul>
           <li>
-            <a href='#'>Home</a>
+            <Link to='/'>Home</Link>
           </li>
           <li>
-            <a href='#'>About</a>
+            <a href='#about'>About</a>
           </li>
           <li>
-            <a href='#'>Menu</a>
+            <a href='#menu'>Menu</a>
           </li>
           <li>
-            <a href='#'>Reservations</a>
+            <Link to='/booking'>Reservations</Link>
           </li>
           <li>
-            <a href='#'>Order Online</a>
+            <Link to='/order-online'>Order Online</Link>
           </li>
           <li>
-            <a href='#'>Login</a>
+            <Link to='/'>Login</Link>
           </li>
         </ul>
       </div>
       <div>
         <h3>Contact</h3>
-        <p>address</p>
+        <p>Lorem ipsum dolor sit amet.</p>
       </div>
       <div>
         <h3>Social Media Links</h3>
         <ul className='social-links'>
-          <a href='#'>
+          <a href='facebook.com' target='_blank'>
             <FontAwesomeIcon icon={faFacebook} />
           </a>
-          <a href='#'>
+          <a href='twitter.com' target='_blank'>
             <FontAwesomeIcon icon={faTwitter} />
           </a>
-          <a href='#'>
+          <a href='instagram.com' target='_blank'>
             <FontAwesomeIcon icon={faInstagram} />
           </a>
-          <a href='#'>
+          <a href='youtube.com' target='_blank'>
             <FontAwesomeIcon icon={faYoutube} />
           </a>
-          <a href='#'>
+          <a href='linkedin.com' target='_blank'>
             <FontAwesomeIcon icon={faLinkedin} />
           </a>
         </ul>
