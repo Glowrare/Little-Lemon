@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faTwitter, faInstagram, faYoutube, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-import logo from '../assets/logo-long.png';
+import logo from '../../assets/logo-long.png';
 const Footer = () => {
   const logoStyle = {
     maxWidth: '100%',
