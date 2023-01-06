@@ -2,7 +2,7 @@ import chefOne from '../../assets/chef-3975835_1280.jpg';
 import chefTwo from '../../assets/chef-5993951_1280.jpg';
 const Chicago = () => {
   return (
-    <section>
+    <section id='about'>
       <div className='about-text-wrapper'>
         <div className='about-header'>
           <h2 className='display-title'>Little Lemon</h2>

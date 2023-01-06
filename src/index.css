@@ -2,7 +2,7 @@
 
 :root {
   --primary-color: #495e57;
-  ---secondary-color: #f4ce14;
+  --secondary-color: #f4ce14;
   --sec-shade1: #ee9972;
   --sec-shadd2: #fbdabb;
   --highlight-light: #edefee;
@@ -11,6 +11,12 @@
   --white: #fff;
   --header-font: 'Markazi Text', serif;
   --body-font: 'Karla', sans-serif;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 html {
@@ -33,15 +39,13 @@ body {
   font-family: var(--header-font);
   font-weight: 500;
   font-size: 64px;
-  line-height: calc(77 / 64);
-  color: var(--black);
+  line-height: 1;
 }
 .subtitle {
   font-family: var(--header-font);
   font-weight: 400;
   font-size: 40px;
-  line-height: calc(48 / 40);
-  color: var(--black);
+  line-height: 1;
 }
 .highlight {
   font-family: var(--body-font);
@@ -72,7 +76,7 @@ body {
 .card-title {
   font-family: var(--body-font);
   font-weight: 700;
-  font-size: 18px;
+  font-size: 1.8rem;
   line-height: calc(21 / 18);
   color: var(--black);
 }
@@ -80,7 +84,84 @@ body {
   color: var(--black);
   font-family: var(--body-font);
   font-weight: 800;
-  font-size: 16px;
+  font-size: 1.6rem;
   line-height: calc(19 / 16);
   text-transform: capitalize;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.btn-primary {
+  padding: 8px 16px;
+  border-radius: 8px;
+  background: var(--secondary-color);
+  color: var(--black);
+  display: inline-block;
+  text-decoration: none;
+  transition: background ease-in-out 0.3s;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: calc(19 / 16);
+}
+.btn-primary:hover {
+  text-decoration: none;
+  background: var(--primary-color);
+  color: var(--white);
+}
+
+/* header */
+.container {
+  display: grid;
+  grid-template-columns: calc(10 / 12 * 100%);
+  justify-content: center;
+}
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+}
+.header-logo {
+  width: 20%;
+}
+.header-logo img {
+  max-width: 100%;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  width: 80%;
+  justify-content: flex-end;
+  gap: 15px;
+}
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+/* Call To Action */
+.cta-header {
+  margin-bottom: 30px;
+}
+.cta-header h1 {
+  color: var(--secondary-color);
+}
+.cta-image {
+  width: 40%;
+  margin-bottom: -50px;
+}
+.cta-image img {
+  max-width: 100%;
+  height: 383px;
+  width: 100%;
+  border-radius: 16px;
+  object-fit: cover;
+}
+.cta-desc {
+  max-width: 300px;
+}
+.cta-desc + a {
+  margin-top: 30px;
 }

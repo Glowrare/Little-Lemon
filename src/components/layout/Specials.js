@@ -46,7 +46,7 @@ const Specials = () => {
     },
   ];
   return (
-    <section>
+    <section id='menu'>
       <div>
         <h2 className='subtitle'>Specials</h2>
         <Button btnText='Online Menu' path='#menu' />

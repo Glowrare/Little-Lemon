@@ -6,20 +6,18 @@ import Specials from '../components/layout/Specials';
 const Home = () => {
   return (
     <>
-      <section>
-        <CallToAction
-          primaryText='Little Lemon'
-          secondaryText='Chicago'
-          description='We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.'
-          cta={true}
-          ctaText='Reserve a Table'
-          ctaURL='/booking'
-          image={HeroImage}
-        />
-        <Specials />
-        <CustomersSay />
-        <Chicago />
-      </section>
+      <CallToAction
+        primaryText='Little Lemon'
+        secondaryText='Chicago'
+        description='We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.'
+        cta={true}
+        ctaText='Reserve a Table'
+        ctaURL='/booking'
+        image={HeroImage}
+      />
+      <Specials />
+      <CustomersSay />
+      <Chicago />
     </>
   );
 };
