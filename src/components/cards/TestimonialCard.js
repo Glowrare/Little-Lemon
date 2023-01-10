@@ -1,10 +1,13 @@
 const TestimonialCard = ({ testimonial }) => {
   return (
-    <article>
-      <h3>{testimonial.rating}</h3>
+    <article className='testimonial-card'>
       <div>
+        <span className='sr-only'>{testimonial.rating.length} out of 5 stars</span>
+        <span aria-hidden='true'>{testimonial.rating}</span>
+      </div>
+      <div className='name-title'>
         <img src={testimonial.image} alt='' />
-        <p>{testimonial.name}</p>
+        <h3>{testimonial.name}</h3>
       </div>
       <p>{testimonial.review}</p>
     </article>
