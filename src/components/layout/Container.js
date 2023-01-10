@@ -1,6 +1,6 @@
-const Container = ({ children, customStyles, customize = false }) => {
+const Container = ({ children, className = '', customStyles, customize = false }) => {
   return (
-    <div className='container' style={customize ? customStyles : {}}>
+    <div className={`container ${className}`} style={customize ? customStyles : {}}>
       {children}
     </div>
   );
