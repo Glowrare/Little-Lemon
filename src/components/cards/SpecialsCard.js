@@ -8,7 +8,7 @@ const SpecialsCard = ({ meal }) => {
       <img src={meal.image} alt={meal.name} />
       <div className='card-header'>
         <h3 className='card-title'>{meal.name}</h3>
-        <span>${meal.price}</span>
+        <span className='highlight'>${meal.price}</span>
       </div>
       <p>{meal.description}</p>
       <Link to={meal.link}>

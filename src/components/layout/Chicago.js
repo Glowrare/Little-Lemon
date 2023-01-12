@@ -5,23 +5,20 @@ const Chicago = () => {
   return (
     <section id='about'>
       <Container>
-        {/* <div className='about-content'> */}
         <div className='about-header'>
           <h2 className='display-title'>Little Lemon</h2>
           <h3 className='subtitle'>Chicago</h3>
         </div>
         <div className='about-content'>
           <p className='about-desc'>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla odio enim vitae. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla odio
-            enim vitae. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla odio enim vitae. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Nulla odio enim vitae.
+            Little Lemon is a charming neighbourhood bistro that serves simple food and classic cocktails in a lively but casual environment. The restaurant
+            features a locally-sourced menu with daily specials.
           </p>
           <div className='about-images'>
             <img src={chefOne} alt='' />
             <img src={chefTwo} alt='' />
           </div>
         </div>
-        {/* </div> */}
       </Container>
     </section>
   );

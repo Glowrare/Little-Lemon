@@ -47,31 +47,31 @@ const Footer = () => {
             <h3>Social Media Links</h3>
             <ul className='social-links'>
               <li>
-                <a href='facebook.com' target='_blank'>
+                <a href='https://facebook.com' target='_blank' rel='noreferrer'>
                   <FontAwesomeIcon icon={faFacebook} />
                 </a>
               </li>
 
               <li>
-                <a href='twitter.com' target='_blank'>
+                <a href='https://twitter.com' target='_blank' rel='noreferrer'>
                   <FontAwesomeIcon icon={faTwitter} />
                 </a>
               </li>
 
               <li>
-                <a href='instagram.com' target='_blank'>
+                <a href='https://instagram.com' target='_blank' rel='noreferrer'>
                   <FontAwesomeIcon icon={faInstagram} />
                 </a>
               </li>
 
               <li>
-                <a href='youtube.com' target='_blank'>
+                <a href='https://youtube.com' target='_blank' rel='noreferrer'>
                   <FontAwesomeIcon icon={faYoutube} />
                 </a>
               </li>
 
               <li>
-                <a href='linkedin.com' target='_blank'>
+                <a href='https://linkedin.com' target='_blank' rel='noreferrer'>
                   <FontAwesomeIcon icon={faLinkedin} />
                 </a>
               </li>

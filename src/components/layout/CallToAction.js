@@ -24,7 +24,7 @@ const CallToAction = ({ primaryText, secondaryText, description, cta, ctaText, c
                 <h1 className='display-title'>{primaryText}</h1>
                 <h2 className='subtitle'>{secondaryText}</h2>
               </div>
-              <p className='cta-desc'>{description}</p>
+              <p className='cta-desc lead-text'>{description}</p>
               {cta && <Button btnText={ctaText} path={ctaURL} />}
             </div>
             <div className='cta-image'>
