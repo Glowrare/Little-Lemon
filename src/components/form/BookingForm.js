@@ -6,15 +6,14 @@ import DateSelector from '../ui/DateSelector';
 import OccasionSelect from '../ui/OccasionSelect';
 import RadioOption from '../ui/RadioOption';
 
-const ReservationDetails = ({ date, time, guests, special, occasion, comment, specialSelector, reservationHandler }) => {
-  const availableTimes = ['13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00'];
+const BookingForm = ({ date, time, guests, special, occasion, comment, specialSelector, reservationHandler, availableTimes, dateHandler }) => {
   return (
     <>
       <section>
         <Container>
           <h3 className='section-title'>Reservation Details</h3>
           <div className='reservation-form'>
-            <DateSelector dateRef={date} labelText='Date' />
+            <DateSelector dateRef={date} labelText='Date' changeHandler={dateHandler} />
             <CountSelect id='time' selectRef={time} labelText='Choose Time' options={availableTimes} />
             <CountSelect
               id='guests'
@@ -56,4 +55,4 @@ const ReservationDetails = ({ date, time, guests, special, occasion, comment, sp
     </>
   );
 };
-export default ReservationDetails;
+export default BookingForm;

@@ -3,6 +3,7 @@ import './App.css';
 import Layout from './components/layout/Layout';
 import HomePage from './pages/Home';
 import BookingPage from './pages/Booking';
+import ConfirmationPage from './pages/ConfirmedBooking';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Routes>
           <Route path='/' element={<HomePage />} />
           <Route path='/booking' element={<BookingPage />} />
+          <Route path='/confirmation' element={<ConfirmationPage />} />
         </Routes>
       </Layout>
     </>

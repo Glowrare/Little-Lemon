@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-const DateSelector = ({ id, labelled = true, labelText, dateRef, enablePastDates = false, fullSpan = false }) => {
+const DateSelector = ({ id, labelled = true, labelText, dateRef, enablePastDates = false, fullSpan = false, changeHandler }) => {
   useEffect(() => {
     if (!enablePastDates) {
       const dateToday = new Date();
@@ -13,7 +13,7 @@ const DateSelector = ({ id, labelled = true, labelText, dateRef, enablePastDates
 
       const maxDate = year + '-' + month + '-' + day;
 
-      dateRef.current.setAttribute('min', maxDate);
+      dateRef?.current.setAttribute('min', maxDate);
     }
   }, [dateRef, enablePastDates]);
   return (
@@ -21,7 +21,7 @@ const DateSelector = ({ id, labelled = true, labelText, dateRef, enablePastDates
       <label htmlFor={id} className={`${!labelled ? 'sr-only ' : ''}highlight`}>
         {labelText}
       </label>
-      <input type='date' id={id} ref={dateRef} />
+      <input type='date' id={id} ref={dateRef} onChange={changeHandler} />
     </div>
   );
 };
