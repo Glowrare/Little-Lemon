@@ -1,6 +1,19 @@
 import { useEffect } from 'react';
 
-const DateSelector = ({ id, labelled = true, labelText, dateRef, enablePastDates = false, fullSpan = false, changeHandler }) => {
+// const DateSelector = ({ id, labelled = true, labelText, dateRef, enablePastDates = false, fullSpan = false, changeHandler }) => {
+const DateSelector = ({
+  id,
+  labelled = true,
+  labelText,
+  dateRef,
+  enablePastDates = false,
+  fullSpan = false,
+  formikVal,
+  validated = false,
+  formError,
+  handleChange,
+  updateTimesCallback,
+}) => {
   useEffect(() => {
     if (!enablePastDates) {
       const dateToday = new Date();
@@ -12,16 +25,27 @@ const DateSelector = ({ id, labelled = true, labelText, dateRef, enablePastDates
       if (day < 10) day = '0' + day.toString();
 
       const maxDate = year + '-' + month + '-' + day;
-
-      dateRef?.current.setAttribute('min', maxDate);
+      document.getElementById(`${id}`).setAttribute('min', maxDate);
+      // dateRef?.current?.setAttribute('min', maxDate);
     }
-  }, [dateRef, enablePastDates]);
+  }, [enablePastDates, id]);
   return (
     <div className={`form-group${fullSpan ? ' full-span' : ''}`}>
       <label htmlFor={id} className={`${!labelled ? 'sr-only ' : ''}highlight`}>
         {labelText}
       </label>
-      <input type='date' id={id} ref={dateRef} onChange={changeHandler} />
+      {/* <input type='date' id={id} ref={dateRef} onChange={changeHandler} /> */}
+      <input
+        type='date'
+        id={id}
+        name={dateRef}
+        {...formikVal}
+        onChange={(event) => {
+          handleChange(event);
+          updateTimesCallback(event.target.value);
+        }}
+      />
+      {validated && <div className='form-error'>{formError}</div>}
     </div>
   );
 };
