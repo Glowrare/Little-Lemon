@@ -1,4 +1,3 @@
-// const OccasionSelect = ({ id, labelText, labelled = true, selectRef, fullSpan = false }) => {
 const OccasionSelect = ({ id, labelText, labelled = true, selectRef, fullSpan = false, formikVal, validated = false, formError }) => {
   const occasions = ['Engagement', 'Birthday', 'Anniversary', 'Reunion', 'Others'];
   return (
@@ -6,15 +5,19 @@ const OccasionSelect = ({ id, labelText, labelled = true, selectRef, fullSpan = 
       <label htmlFor={id} className={`${!labelled ? 'sr-only ' : ''}highlight`}>
         {labelText}
       </label>
-      <select id={id} name={selectRef} {...formikVal}>
+      <select id={id} data-testid={id} name={selectRef} {...formikVal}>
         <option value=''>None</option>
         {occasions.map((ocassion, index) => (
-          <option key={index} value={ocassion.toLowerCase()}>
+          <option key={index} value={ocassion.toLowerCase()} data-testid={`${id}-option`}>
             {ocassion}
           </option>
         ))}
       </select>
-      {validated && <div className='form-error'>{formError}</div>}
+      {validated && (
+        <div className='form-error' data-testid={`${id}-error`}>
+          {formError}
+        </div>
+      )}
     </div>
   );
 };

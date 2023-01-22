@@ -4,7 +4,7 @@ const UncontrolledInputField = ({ type = 'text', id, labelText, placeholder = la
       <label htmlFor={id} className={`${!labelled ? 'sr-only ' : ''}highlight`}>
         {labelText}
       </label>
-      <input type={type} id={id} ref={inputRef} placeholder={placeholder} />
+      <input type={type} id={id} data-testid={id} ref={inputRef} placeholder={placeholder} />
     </div>
   );
 };

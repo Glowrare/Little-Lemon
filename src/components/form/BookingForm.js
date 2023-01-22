@@ -22,12 +22,12 @@ const BookingForm = ({ availableTimes, reservationHandler, updateTimesCallback }
       reservationHandler(values);
     },
     validationSchema: Yup.object({
-      customerName: Yup.string().required('Required'),
-      email: Yup.string().email('Invalid email address').required('Required'),
+      customerName: Yup.string().required('Customer Name is required'),
+      email: Yup.string().email('Invalid email address').required('Email is Required'),
       time: Yup.string().required('Please select Time'),
       guests: Yup.string(),
       comment: Yup.string(),
-      date: Yup.string().required('Date is required'),
+      date: Yup.string().required('Choose a date'),
       occasion: Yup.string(),
     }),
   });
@@ -40,7 +40,7 @@ const BookingForm = ({ availableTimes, reservationHandler, updateTimesCallback }
       <section>
         <Container>
           <h3 className='section-title'>Reservation Details</h3>
-          <form onSubmit={formik.handleSubmit}>
+          <form onSubmit={formik.handleSubmit} data-testid='reservation-form'>
             <div className='reservation-form'>
               <ControlledInputField
                 id='customerName'
@@ -52,6 +52,7 @@ const BookingForm = ({ availableTimes, reservationHandler, updateTimesCallback }
               />
               <ControlledInputField
                 id='email'
+                type='email'
                 labelText='Email*'
                 inputVal='email'
                 formikVal={formik.getFieldProps('email')}
@@ -96,7 +97,7 @@ const BookingForm = ({ availableTimes, reservationHandler, updateTimesCallback }
                 formikVal={formik.getFieldProps('comment')}
               />
             </div>
-            <button type='submit' className='btn-primary' disabled={!formik.isValid}>
+            <button type='submit' data-testid='submit' className='btn-primary' disabled={!formik.isValid}>
               Make Your reservation
             </button>
           </form>

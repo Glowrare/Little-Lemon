@@ -15,8 +15,12 @@ const ControlledInputField = ({
       <label htmlFor={id} className={`${!labelled ? 'sr-only ' : ''}highlight`}>
         {labelText}
       </label>
-      <input type={type} id={id} name={inputVal} placeholder={placeholder} {...formikVal} />
-      {validated && <div className='form-error'>{formError}</div>}
+      <input type={type} id={id} data-testid={id} name={inputVal} placeholder={placeholder} {...formikVal} />
+      {validated && (
+        <div className='form-error' data-testid={`${id}-error`}>
+          {formError}
+        </div>
+      )}
     </div>
   );
 };

@@ -4,14 +4,18 @@ const CountSelect = ({ id, labelText, labelled = true, selectRef, options, fullS
       <label htmlFor={id} className={`${!labelled ? 'sr-only ' : ''}highlight`}>
         {labelText}
       </label>
-      <select id={id} name={selectRef} {...formikVal}>
+      <select id={id} data-testid={id} name={selectRef} {...formikVal}>
         {options.map((opt, index) => (
-          <option value={opt.value === '' ? opt.value : opt} key={index}>
+          <option value={opt.value === '' ? opt.value : opt} key={index} data-testid={`${id}-option`}>
             {opt.name ? opt.name : opt}
           </option>
         ))}
       </select>
-      {validated && <div className='form-error'>{formError}</div>}
+      {validated && (
+        <div className='form-error' data-testid={`${id}-error`}>
+          {formError}
+        </div>
+      )}
     </div>
   );
 };

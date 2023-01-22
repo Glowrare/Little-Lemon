@@ -26,7 +26,6 @@ const DateSelector = ({
 
       const maxDate = year + '-' + month + '-' + day;
       document.getElementById(`${id}`).setAttribute('min', maxDate);
-      // dateRef?.current?.setAttribute('min', maxDate);
     }
   }, [enablePastDates, id]);
   return (
@@ -34,10 +33,10 @@ const DateSelector = ({
       <label htmlFor={id} className={`${!labelled ? 'sr-only ' : ''}highlight`}>
         {labelText}
       </label>
-      {/* <input type='date' id={id} ref={dateRef} onChange={changeHandler} /> */}
       <input
         type='date'
         id={id}
+        data-testid={id}
         name={dateRef}
         {...formikVal}
         onChange={(event) => {
@@ -45,7 +44,11 @@ const DateSelector = ({
           updateTimesCallback(event.target.value);
         }}
       />
-      {validated && <div className='form-error'>{formError}</div>}
+      {validated && (
+        <div className='form-error' data-testid={`${id}-error`}>
+          {formError}
+        </div>
+      )}
     </div>
   );
 };
