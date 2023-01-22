@@ -6,7 +6,6 @@ describe('Booking', () => {
   afterEach(cleanup);
 
   test('initializeTimes returns non-empty array', async () => {
-    // render(<Booking />);
     render(
       <MemoryRouter>
         <Booking />

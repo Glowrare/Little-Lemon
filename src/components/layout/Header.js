@@ -1,7 +1,11 @@
+import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/logo-small.png';
 import Container from './Container';
 const Header = () => {
+  const [isNavExpanded, setIsNavExpanded] = useState(false);
   return (
     <header>
       <Container>
@@ -9,19 +13,27 @@ const Header = () => {
           <Link to='/' className='header-logo'>
             <img src={logo} alt='Little Lemon' />
           </Link>
-          <ul className='nav-links'>
+          <button
+            className='hamburger'
+            type='button'
+            aria-label={`Click to ${isNavExpanded ? 'close' : 'open'} navigation menu`}
+            onClick={() => setIsNavExpanded(!isNavExpanded)}
+          >
+            {isNavExpanded ? <FontAwesomeIcon icon={faXmark} /> : <FontAwesomeIcon icon={faBars} />}
+          </button>
+          <ul className={isNavExpanded ? 'nav-links expanded' : 'nav-links'} aria-hidden={isNavExpanded ? false : true}>
             <li>
               <Link to='/' className='nav-link card-title'>
                 Home
               </Link>
             </li>
             <li>
-              <a href='#about' className='nav-link card-title'>
+              <a href='/#about' className='nav-link card-title'>
                 About
               </a>
             </li>
             <li>
-              <a href='#menu' className='nav-link card-title'>
+              <a href='/#menu' className='nav-link card-title'>
                 Menu
               </a>
             </li>

@@ -5,9 +5,6 @@ import CallToAction from '../components/layout/CallToAction';
 import HeroImage from '../assets/book-table.jpg';
 import BookingForm from '../components/form/BookingForm';
 
-// export const init = (initialTimes) => {
-//   return initialTimes.times;
-// };
 const ACTIONS = {
   UPDATE_TIMES: 'update_times',
   INITAILIZE_TIMES: 'initialize_times',

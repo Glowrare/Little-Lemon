@@ -43,7 +43,7 @@ const CustomersSay = () => {
           <h2 className='subtitle' style={{ marginTop: '40px', textAlign: 'center' }}>
             Testimonials
           </h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', rowGap: '30px', columnGap: '20px', margin: '40px 0' }}>
+          <div className='testimonial-list'>
             {testimonials.map((testimonial, idx) => (
               <TestimonialCard testimonial={testimonial} key={idx} />
             ))}

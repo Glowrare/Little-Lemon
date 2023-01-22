@@ -15,16 +15,16 @@ const Footer = () => {
             <img src={logo} alt='Little Lemon' style={logoStyle} />
           </Link>
           <div>
-            <h3>Doormat Navigation</h3>
+            <h3>Navigation</h3>
             <ul className='doormat-links'>
               <li>
                 <Link to='/'>Home</Link>
               </li>
               <li>
-                <a href='#about'>About</a>
+                <a href='/#about'>About</a>
               </li>
               <li>
-                <a href='#menu'>Menu</a>
+                <a href='/#menu'>Menu</a>
               </li>
               <li>
                 <Link to='/booking'>Reservations</Link>
@@ -44,7 +44,7 @@ const Footer = () => {
             </p>
           </div>
           <div>
-            <h3>Social Media Links</h3>
+            <h3>Socials</h3>
             <ul className='social-links'>
               <li>
                 <a href='https://facebook.com' target='_blank' rel='noreferrer'>

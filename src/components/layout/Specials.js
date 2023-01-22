@@ -8,7 +8,7 @@ import SpecialsCard from '../cards/SpecialsCard';
 import Button from '../ui/Button';
 import Container from './Container';
 
-const Specials = () => {
+const Specials = ({ header = true }) => {
   const menuList = [
     {
       name: 'Greek Salad',
@@ -65,10 +65,13 @@ const Specials = () => {
   return (
     <section id='menu'>
       <Container>
-        <div style={headerStyles}>
-          <h2 className='subtitle'>Specials</h2>
-          <Button btnText='Online Menu' path='#menu' />
-        </div>
+        {header && (
+          <div style={headerStyles}>
+            <h2 className='subtitle'>Specials</h2>
+            <Button btnText='Online Menu' path='/order-online' />
+          </div>
+        )}
+
         <ul className='specials-list'>
           {menuList.map((meal, idx) => (
             <SpecialsCard meal={meal} key={idx} />
