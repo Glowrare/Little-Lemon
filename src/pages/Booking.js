@@ -39,11 +39,12 @@ const Booking = () => {
   const updateTimesCallback = useCallback(updateTimes, []);
 
   const submitForm = (formData) => {
-    console.log(formData);
     const response = submitAPI(formData);
 
     if (response) {
       navigate('/confirmation');
+    } else {
+      alert('Oops! Something went wrong. Please try again.');
     }
   };
 

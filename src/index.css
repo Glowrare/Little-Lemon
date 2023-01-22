@@ -129,7 +129,7 @@ img {
   border: 0 !important;
 }
 
-/* header */
+/* Header */
 .container {
   display: grid;
   grid-template-columns: calc(10 / 12 * 100%);
@@ -226,6 +226,10 @@ img {
   height: 200px;
   object-fit: cover;
   margin-bottom: 30px;
+  transition: all ease-in-out 0.3s;
+}
+.specials-list-item:hover img {
+  transform: scale(1.1);
 }
 .specials-list-item img ~ * {
   padding-left: 20px;
@@ -299,6 +303,40 @@ img {
   top: -70px;
   right: 0;
 }
+
+/* Who We Are */
+.who-we-are-content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 50px;
+}
+.gallery-images {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px 20px;
+}
+.gallery-images img {
+  transition: all ease-in-out 0.3s;
+}
+.gallery-images img:nth-child(odd) {
+  border: solid 4px var(--primary-color);
+  transform: rotate(3deg);
+}
+.gallery-images img:nth-child(even) {
+  border: solid 4px var(--secondary-color);
+  transform: rotate(-3deg);
+}
+.gallery-images img:nth-child(odd):hover {
+  border: solid 4px var(--secondary-color);
+  transform: rotate(-3deg);
+}
+.gallery-images img:nth-child(even):hover {
+  border: solid 4px var(--primary-color);
+  transform: rotate(3deg);
+}
+
 /* Forms */
 input,
 textarea,
@@ -440,8 +478,15 @@ select:focus {
   }
   .reservation-form,
   .testimonial-list,
-  .specials-list {
+  .specials-list,
+  .gallery-images {
     grid-template-columns: 1fr 1fr;
+  }
+  .who-we-are-content {
+    grid-template-columns: 1fr;
+  }
+  .who-we-are-content img {
+    order: 1;
   }
   .about-content,
   .footer-wrapper {
@@ -464,7 +509,8 @@ select:focus {
   }
   .reservation-form,
   .specials-list,
-  .testimonial-list {
+  .testimonial-list,
+  .gallery-images {
     grid-template-columns: 1fr;
   }
   .footer-wrapper .logo {

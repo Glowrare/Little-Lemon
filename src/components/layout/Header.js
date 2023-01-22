@@ -6,6 +6,12 @@ import logo from '../../assets/logo-small.png';
 import Container from './Container';
 const Header = () => {
   const [isNavExpanded, setIsNavExpanded] = useState(false);
+
+  const closeNav = () => {
+    if (isNavExpanded) {
+      setIsNavExpanded(false);
+    }
+  };
   return (
     <header>
       <Container>
@@ -23,32 +29,32 @@ const Header = () => {
           </button>
           <ul className={isNavExpanded ? 'nav-links expanded' : 'nav-links'} aria-hidden={isNavExpanded ? false : true}>
             <li>
-              <Link to='/' className='nav-link card-title'>
+              <Link to='/' className='nav-link card-title' onClick={closeNav}>
                 Home
               </Link>
             </li>
             <li>
-              <a href='/#about' className='nav-link card-title'>
+              <Link to='/about' className='nav-link card-title' onClick={closeNav}>
                 About
-              </a>
+              </Link>
             </li>
             <li>
-              <a href='/#menu' className='nav-link card-title'>
+              <a href='/order-online' className='nav-link card-title' onClick={closeNav}>
                 Menu
               </a>
             </li>
             <li>
-              <Link to='/booking' className='nav-link card-title'>
+              <Link to='/booking' className='nav-link card-title' onClick={closeNav}>
                 Reservations
               </Link>
             </li>
             <li>
-              <Link to='/order-online' className='nav-link card-title'>
+              <Link to='/order-online' className='nav-link card-title' onClick={closeNav}>
                 Order Online
               </Link>
             </li>
             <li>
-              <Link to='/' className='nav-link card-title'>
+              <Link to='/' className='nav-link card-title' onClick={closeNav}>
                 Login
               </Link>
             </li>

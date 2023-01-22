@@ -21,10 +21,10 @@ const Footer = () => {
                 <Link to='/'>Home</Link>
               </li>
               <li>
-                <a href='/#about'>About</a>
+                <Link to='/about'>About</Link>
               </li>
               <li>
-                <a href='/#menu'>Menu</a>
+                <Link to='/order-online'>Menu</Link>
               </li>
               <li>
                 <Link to='/booking'>Reservations</Link>

@@ -40,6 +40,7 @@ const BookingForm = ({ availableTimes, reservationHandler, updateTimesCallback }
       <section>
         <Container>
           <h3 className='section-title'>Reservation Details</h3>
+          <div>* Required fields</div>
           <form onSubmit={formik.handleSubmit} data-testid='reservation-form'>
             <div className='reservation-form'>
               <ControlledInputField
